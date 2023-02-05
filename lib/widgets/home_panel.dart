@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-Center balancePanel(
+Center homePanel(
     double balance, double profit, double profitPercent, ThemeData themeData) {
   return Center(
     child: Container(
