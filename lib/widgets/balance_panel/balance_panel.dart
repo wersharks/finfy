@@ -28,7 +28,7 @@ Center balancePanel(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Current Balance',
+                      'Current Wealth',
                       style: GoogleFonts.lato(
                         color: themeData.primaryColor.withOpacity(0.7),
                         fontWeight: FontWeight.w400,
@@ -38,7 +38,7 @@ Center balancePanel(
                     SizedBox(
                       width: 55.w,
                       child: Text(
-                        '\$${balance.toStringAsFixed(2).replaceFirst('.', ',').replaceAll(RegExp(r'\B(?=(\d{3})+(?!\d))'), '.')}',
+                        '\Rs.${balance.toStringAsFixed(2).replaceFirst('.', ',').replaceAll(RegExp(r'\B(?=(\d{3})+(?!\d))'), '.')}',
                         style: GoogleFonts.poppins(
                           color: themeData.primaryColor,
                           letterSpacing: 1,
@@ -79,7 +79,7 @@ Center balancePanel(
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 0.2.h),
                       child: Text(
-                        '\$${profit.toStringAsFixed(2).replaceFirst('.', ',').replaceAll(RegExp(r'\B(?=(\d{3})+(?!\d))'), '.')}',
+                        '\Rs.${profit.toStringAsFixed(2).replaceFirst('.', ',').replaceAll(RegExp(r'\B(?=(\d{3})+(?!\d))'), '.')}',
                         style: GoogleFonts.poppins(
                           color: themeData.primaryColor.withOpacity(0.9),
                           letterSpacing: 0.5,

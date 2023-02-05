@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  double balance = 66032206.10;
+  double balance = 300000.10;
   double profit = 35.22;
   double profitPercent = 0.22;
 
