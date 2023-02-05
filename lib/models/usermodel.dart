@@ -1,4 +1,4 @@
-class User {
+class CUser {
   String? studentId;
   String? name;
   String? rollno;
@@ -7,7 +7,7 @@ class User {
   String? schoolname;
   int? fincoin;
 
-  User(
+  CUser(
       {this.studentId,
       this.name,
       this.rollno,
@@ -16,7 +16,7 @@ class User {
       this.schoolname,
       this.fincoin});
 
-  User.fromJson(Map<String, dynamic> json) {
+  CUser.fromJson(Map<String, dynamic> json) {
     studentId = json['studentId'];
     name = json['name'];
     rollno = json['rollno'];

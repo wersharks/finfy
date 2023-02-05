@@ -1,10 +1,13 @@
 import 'package:crypto_app/account.dart';
+import 'package:crypto_app/models/usermodel.dart';
 import 'package:crypto_app/pages/home_screen.dart';
 import 'package:crypto_app/snackbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
+
+import 'fixture/userfixture.dart';
 
 class Auth extends ChangeNotifier {
   AuthCredential? _phoneAuthCredential;
@@ -24,6 +27,13 @@ class Auth extends ChangeNotifier {
     CollectionReference users = FirebaseFirestore.instance.collection('users');
     bool exist = false;
 
+    CUser cuser = CUserFixture.dummyHSK();
+    cuser.studentId = user!.uid;
+    cuser.name = name;
+    cuser.rollno = rollno;
+    cuser.teachercode = schoolcode;
+    cuser.phoneNo = mobileNumber;
+
     try {
       int flag = 0;
       await users.doc(user!.uid).get().then((doc) {
@@ -39,12 +49,7 @@ class Auth extends ChangeNotifier {
 
           users
               .doc(user.uid)
-              .set({
-                'name': name,
-                'rollno': rollno,
-                'schoolcode': schoolcode,
-                'phoneNo': mobileNumber,
-              })
+              .set(cuser.toJson())
               .then((value) => print("User Added"))
               .catchError((error) => print("Failed to add user: $error"));
         }
@@ -57,12 +62,7 @@ class Auth extends ChangeNotifier {
     if (exist == false) {
       users
           .doc(user!.uid)
-          .set({
-               'name': name,
-                'rollno': rollno,
-                'schoolcode': schoolcode,
-                'phoneNo': mobileNumber,
-          })
+          .set(cuser.toJson())
           .then((value) => print("User Added"))
           .catchError((error) => print("Failed to add user: $error"));
     }
