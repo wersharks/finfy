@@ -1,12 +1,18 @@
+import 'package:crypto_app/login.dart';
+import 'package:crypto_app/snackbar.dart';
 import 'package:crypto_app/widgets/actions/actions_widget.dart';
 import 'package:crypto_app/widgets/balance_panel/balance_panel.dart';
 import 'package:crypto_app/widgets/chart/chart_home_page.dart';
 import 'package:crypto_app/widgets/type_card.dart';
 import 'package:crypto_font_icons/crypto_font_icons.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:unicons/unicons.dart';
+
+import '../auth.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

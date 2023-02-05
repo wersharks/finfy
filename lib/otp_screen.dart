@@ -88,8 +88,9 @@ class _OTPPageState extends State<OTPPage> {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        Provider.of<Auth>(context).otp = otp!;
-                        Provider.of<Auth>(context).submitOTP(context);
+                        print("Hi");
+                        Provider.of<Auth>(context, listen: false).otp = otp!;
+                        Provider.of<Auth>(context, listen: false).submitOTP(context);
                       },
                       style: ButtonStyle(
                         elevation: MaterialStateProperty.all(0),

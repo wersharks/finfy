@@ -6,6 +6,7 @@ import 'package:crypto_app/pages/home_page.dart';
 import 'package:crypto_app/pages/home_screen.dart';
 import 'package:crypto_app/themes/app_theme.dart';
 import 'package:crypto_app/themes/theme_model.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -50,7 +51,7 @@ class _MyAppState extends State<MyApp> {
               transitionDuration: const Duration(milliseconds: 500),
               debugShowCheckedModeBanner: false,
               title: 'Crypto App',
-              home:  LoginPage(),
+              home:  FirebaseAuth.instance.currentUser == null ? LoginPage() : HomeScreen(),
                theme: AppTheme.dark,
               darkTheme: darkModeTheme,
             );
