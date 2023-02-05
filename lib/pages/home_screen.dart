@@ -1,4 +1,5 @@
 import 'package:crypto_app/login.dart';
+import 'package:crypto_app/pages/home_page.dart';
 import 'package:crypto_app/snackbar.dart';
 import 'package:crypto_app/widgets/actions/actions_widget.dart';
 import 'package:crypto_app/widgets/balance_panel/balance_panel.dart';
@@ -81,7 +82,13 @@ class _HomeScreenState extends State<HomeScreen> {
               balancePanel(balance, profit, profitPercent, themeData),
               //actionsWidget(themeData),
               typeCard('Banking'),
-              typeCard('Stock Market'),
+              GestureDetector(
+                child: typeCard('Stock Market'),
+                onTap: (() {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+                }),
+              ),
               typeCard('Gold')
             ],
           ),
