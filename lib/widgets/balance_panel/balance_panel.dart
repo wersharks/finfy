@@ -51,14 +51,14 @@ Center balancePanel(
                     ),
                   ],
                 ),
-                SizedBox(
-                  child: Row(
-                    children: [
-                      cryptoIcon(CryptoFontIcons.ETH, themeData),
-                      cryptoIcon(CryptoFontIcons.BTC, themeData),
-                    ],
-                  ),
-                ),
+                // SizedBox(
+                //   child: Row(
+                //     children: [
+                //       cryptoIcon(CryptoFontIcons.ETH, themeData),
+                //       cryptoIcon(CryptoFontIcons.BTC, themeData),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
             Row(

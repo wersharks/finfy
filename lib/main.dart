@@ -13,9 +13,10 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   await Firebase.initializeApp();
+  await Firebase.initializeApp();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
@@ -36,26 +37,25 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-        create: (_) => ThemeModel(),
-       
-      ),   ChangeNotifierProvider(create: (context) => Auth()),
-
+          create: (_) => ThemeModel(),
+        ),
+        ChangeNotifierProvider(create: (context) => Auth()),
         ChangeNotifierProvider(create: (context) => Account()),
       ],
-        child: Consumer<ThemeModel>(
-          builder: (context, ThemeModel themeNotifier, child) => 
-          Sizer(builder: (context, orientation, deviceType) {
-            return GetMaterialApp(
-              defaultTransition: Transition.rightToLeft,
-              transitionDuration: const Duration(milliseconds: 500),
-              debugShowCheckedModeBanner: false,
-              title: 'Crypto App',
-              home:  LoginPage(),
-               theme: AppTheme.dark,
-              darkTheme: darkModeTheme,
-            );
-          }),
-        ),
+      child: Consumer<ThemeModel>(
+        builder: (context, ThemeModel themeNotifier, child) =>
+            Sizer(builder: (context, orientation, deviceType) {
+          return GetMaterialApp(
+            defaultTransition: Transition.rightToLeft,
+            transitionDuration: const Duration(milliseconds: 500),
+            debugShowCheckedModeBanner: false,
+            title: 'Crypto App',
+            home: HomePage(),
+            theme: AppTheme.dark,
+            darkTheme: darkModeTheme,
+          );
+        }),
+      ),
     );
   }
 }

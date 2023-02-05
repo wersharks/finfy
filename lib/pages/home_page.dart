@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
             children: [
               balancePanel(balance, profit, profitPercent, themeData),
-              actionsWidget(themeData),
+              //  actionsWidget(themeData),
               chartHomePage(
                 true,
                 CryptoFontIcons.ETH,
@@ -106,9 +106,9 @@ class _HomePageState extends State<HomePage> {
               chartHomePage(
                 true,
                 CryptoFontIcons.DOGE,
-                'Dogecoin',
-                'DOGE',
-                'PLN',
+                'Trident',
+                'TRI',
+                'INR',
                 const [
                   FlSpot(0, 0.22),
                   FlSpot(1, 0.24),
@@ -123,9 +123,9 @@ class _HomePageState extends State<HomePage> {
               chartHomePage(
                 true,
                 CryptoFontIcons.LTC,
-                'Litecoin',
-                'LTC',
-                'USD',
+                'Linde India',
+                'LIN',
+                'INR',
                 const [
                   FlSpot(0, 100.40),
                   FlSpot(1, 102.34),

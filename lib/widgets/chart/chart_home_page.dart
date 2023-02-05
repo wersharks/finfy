@@ -63,11 +63,11 @@ Padding chartHomePage(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        cryptoIcon,
-                        size: 15.sp,
-                        color: Colors.white,
-                      ),
+                      // Icon(
+                      //   cryptoIcon,
+                      //   size: 15.sp,
+                      //   color: Colors.white,
+                      // ),
                       Padding(
                         padding: EdgeInsets.only(left: 1.w),
                         child: SizedBox(
