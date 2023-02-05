@@ -1,4 +1,5 @@
 import 'package:crypto_app/pages/details_page.dart';
+import 'package:crypto_app/pages/home_page.dart';
 import 'package:crypto_app/widgets/balance_panel/profit_percentage.dart';
 import 'package:crypto_app/widgets/chart/chart.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -8,12 +9,17 @@ import 'package:sizer/sizer.dart';
 
 Padding typeCard(
   String type,
+  BuildContext context
 ) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Center(
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+
+          Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+        },
         child: Container(
           decoration: BoxDecoration(
             color: Colors.black,

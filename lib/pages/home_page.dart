@@ -15,8 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double balance = 250000.10;
-  double profit = 35.22;
+  double balance = 250000;
+  double profit = 35;
   double profitPercent = 0.22;
 
   @override

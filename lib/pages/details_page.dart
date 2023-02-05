@@ -130,13 +130,13 @@ class _DetailsPageState extends State<DetailsPage> {
                       color: themeData.primaryColor.withOpacity(0.1),
                       shape: BoxShape.circle,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Icon(
-                        widget.cryptoIcon,
-                        size: 80.sp,
-                      ),
-                    ),
+                    // child: Padding(
+                    //   padding: const EdgeInsets.all(15.0),
+                    //   child: Icon(
+                    //     widget.cryptoIcon,
+                    //     size: 80.sp,
+                    //   ),
+                    // ),
                   ),
                 ),
               ),
@@ -145,7 +145,7 @@ class _DetailsPageState extends State<DetailsPage> {
               padding: EdgeInsets.only(top: 0.5.h),
               child: Center(
                 child: Text(
-                  '\$${widget.spots.last.y.toStringAsFixed(2).replaceFirst('.', ',').replaceAll(RegExp(r'\B(?=(\d{3})+(?!\d))'), '.')}',
+                  'Rs.935.90',
                   style: GoogleFonts.lato(
                     letterSpacing: 1,
                     color: themeData.primaryColor,

@@ -21,14 +21,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
   double balance = 300000.10;
   double profit = 35.22;
   double profitPercent = 0.22;
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        
+          currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+        items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home,),label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.read_more),label: 'Learn'),
+        BottomNavigationBarItem(icon: Icon(Icons.newspaper),label: 'News'),
+        BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: 'Profile'),
+      ]),
       backgroundColor: themeData.backgroundColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(40.0), //appbar size
@@ -81,15 +98,16 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               balancePanel(balance, profit, profitPercent, themeData),
               //actionsWidget(themeData),
-              typeCard('Banking'),
+              typeCard('Banking', context),
               GestureDetector(
-                child: typeCard('Stock Market'),
-                onTap: (() {
+                child: typeCard('Stock Market', context),
+                onTap: () {
+                  print('hi');
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => HomePage()));
-                }),
+                },
               ),
-              typeCard('Gold')
+              typeCard('Gold', context)
             ],
           ),
         ),
