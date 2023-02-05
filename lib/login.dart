@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                         onChanged: (value) {
                           rollno = value;
                         },
-                        obscureText: true,
+                        //   obscureText: true,
                         decoration: InputDecoration(
                             border: InputBorder.none, hintText: "Roll no"),
                       ),
@@ -144,11 +144,15 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        Provider.of<Auth>(context,listen: false).name = name;
-                        Provider.of<Auth>(context,listen: false).rollno = rollno;
-                        Provider.of<Auth>(context,listen: false).schoolcode = schoolcode;
-                        Provider.of<Auth>(context,listen: false).mobileNumber = phoneNumber!;
-                        Provider.of<Auth>(context,listen: false).submitPhoneNumber(context);
+                        Provider.of<Auth>(context, listen: false).name = name;
+                        Provider.of<Auth>(context, listen: false).rollno =
+                            rollno;
+                        Provider.of<Auth>(context, listen: false).schoolcode =
+                            schoolcode;
+                        Provider.of<Auth>(context, listen: false).mobileNumber =
+                            phoneNumber!;
+                        Provider.of<Auth>(context, listen: false)
+                            .submitPhoneNumber(context);
 
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => OTPPage()));

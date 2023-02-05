@@ -13,7 +13,7 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
             transitionDuration: const Duration(milliseconds: 500),
             debugShowCheckedModeBanner: false,
             title: 'Crypto App',
-            home: HomePage(),
+            home: (FirebaseAuth.instance.currentUser!=null)?HomeScreen():LoginPage(),
             theme: AppTheme.dark,
             darkTheme: darkModeTheme,
           );
