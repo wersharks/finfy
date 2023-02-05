@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double balance = 66032206.10;
+  double balance = 250000.10;
   double profit = 35.22;
   double profitPercent = 0.22;
 
@@ -38,12 +38,7 @@ class _HomePageState extends State<HomePage> {
           automaticallyImplyLeading: false,
           titleSpacing: 0,
           leadingWidth: 15.w,
-          title: Image.asset(
-            themeData.brightness == Brightness.light
-                ? 'assets/sobGOGdark.png'
-                : 'assets/sobGOGlight.png',
-            height: 3.5.h,
-          ),
+          title: Text('Finfy'),
           centerTitle: true,
           actions: <Widget>[
             Padding(
@@ -73,13 +68,13 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
             children: [
               balancePanel(balance, profit, profitPercent, themeData),
-              actionsWidget(themeData),
+              //  actionsWidget(themeData),
               chartHomePage(
                 true,
                 CryptoFontIcons.ETH,
-                'Ethereum',
-                'ETH',
-                'USD',
+                'Adani Green energy',
+                'AGE',
+                'INR',
                 const [
                   FlSpot(0, 2550.18),
                   FlSpot(1, 2500.34),
@@ -94,9 +89,9 @@ class _HomePageState extends State<HomePage> {
               chartHomePage(
                 true,
                 CryptoFontIcons.BTC,
-                'Bitcoin',
-                'BTC',
-                'USD',
+                'Reliance Ltd.',
+                'RLI',
+                'INR',
                 const [
                   FlSpot(0, 40005.71),
                   FlSpot(1, 40875.23),
@@ -111,9 +106,9 @@ class _HomePageState extends State<HomePage> {
               chartHomePage(
                 true,
                 CryptoFontIcons.DOGE,
-                'Dogecoin',
-                'DOGE',
-                'PLN',
+                'Trident',
+                'TRI',
+                'INR',
                 const [
                   FlSpot(0, 0.22),
                   FlSpot(1, 0.24),
@@ -128,9 +123,9 @@ class _HomePageState extends State<HomePage> {
               chartHomePage(
                 true,
                 CryptoFontIcons.LTC,
-                'Litecoin',
-                'LTC',
-                'USD',
+                'Linde India',
+                'LIN',
+                'INR',
                 const [
                   FlSpot(0, 100.40),
                   FlSpot(1, 102.34),

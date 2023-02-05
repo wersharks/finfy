@@ -14,9 +14,10 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   await Firebase.initializeApp();
+  await Firebase.initializeApp();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
@@ -37,10 +38,9 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-        create: (_) => ThemeModel(),
-       
-      ),   ChangeNotifierProvider(create: (context) => Auth()),
-
+          create: (_) => ThemeModel(),
+        ),
+        ChangeNotifierProvider(create: (context) => Auth()),
         ChangeNotifierProvider(create: (context) => Account()),
       ],
         child: Consumer<ThemeModel>(

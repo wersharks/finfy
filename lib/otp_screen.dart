@@ -100,7 +100,7 @@ class _OTPPageState extends State<OTPPage> {
                       ),
                       child: Center(
                           child: Text(
-                        "Get OTP",
+                        "Sign up",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )),
                     ),
